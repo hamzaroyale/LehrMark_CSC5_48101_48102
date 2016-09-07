@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
     //Declare and initialize variables
     unsigned short nShares=750;  //Number of Shares
     float ppShare=3.5e1f;        //Price per share in $'s
-    unsigned char comish=3;      //Commission percentage
+    unsigned char comish=2;      //Commission percentage
     float pricePd, comshPd, totPaid; //Price, Commission, Total Paid $'s
 
     //Calculate the amounts paid in $'s
@@ -30,7 +30,10 @@ int main(int argc, char** argv) {
     totPaid=pricePd+comshPd;
     
     //Output the results
-    cout<<"Price of Stock Purchase Problem "<<endl;
+    //cout<<"Price of Stock Purchase Problem "<<endl;
+    //cout<<"Price of Stock Purchase Problem\n";
+    cout<<"Price of Stock ";
+    cout<<"Purchase Problem\n";
     cout<<"Number of Shares purchased = "<<nShares<<endl;
     cout<<"Price per share = $"<<ppShare<<endl;
     cout<<"Commission = "<<static_cast<int>(comish)<<"%"<<endl;
