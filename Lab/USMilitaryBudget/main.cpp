@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
     //Display Output
     cout<<"The Military Budget for 2016 = $"<<milBdgt<<endl;
     cout<<"The Federal Budget for 2016  = $"<<fedBdgt<<endl;
-    cout<<"The Percentage spent on the Militart = "<<pMilSpd<<"%"<<endl;
+    cout<<"The Percentage spent on the Military = "<<pMilSpd<<"%"<<endl;
     
     //Exit Program
     return 0;
