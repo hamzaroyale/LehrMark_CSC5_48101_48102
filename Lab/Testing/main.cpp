@@ -18,6 +18,7 @@ using namespace std;  //Name-space used in the System Library
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declaration of Variables
+    int x;
     
     //Input values
     
