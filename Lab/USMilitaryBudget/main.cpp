@@ -30,6 +30,10 @@ int main(int argc, char** argv) {
     //Process values -> Map inputs to Outputs
     pMilSpd=milBdgt/fedBdgt*PERCENT;
     
+    //How to round to 2 decimal places
+    int round=pMilSpd*100+0.5f;//Shift by 2 decimal places *100 then round up 0.5
+    pMilSpd=round/100.0f;//Integer truncated then shift back 2 decimal places
+    
     //Display Output
     cout<<"The Military Budget for 2016 = $"<<milBdgt<<endl;
     cout<<"The Federal Budget for 2016  = $"<<fedBdgt<<endl;
