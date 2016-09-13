@@ -3,6 +3,7 @@
    Author: Dr. Mark E. Lehr
    Created on September 12th, 2016, 10:28 AM
    Purpose:  Calculate the distance dropped in free fall.
+            for both feet and meters.
  */
 
 //System Libraries
