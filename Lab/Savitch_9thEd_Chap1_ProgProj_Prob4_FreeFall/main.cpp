@@ -14,6 +14,7 @@ using namespace std;  //Name-space used in the System Library
 
 //Global Constants
 const float GRAVITY=32.174;//Acceleration in ft/sec^2
+const float CNVMFT=3.28084;//Conversion from meters to feet
 
 //Function prototypes
 
@@ -21,7 +22,8 @@ const float GRAVITY=32.174;//Acceleration in ft/sec^2
 int main(int argc, char** argv) {
     //Declaration of Variables
     float time;   //Time as input in seconds
-    float disFell;//Distance in free fall
+    float dftFell;//Distance in free fall feet
+    float dmtFell;//Distance in free fall meters
     int   places; //Places to round the answer
     
     //Input values
@@ -32,16 +34,20 @@ int main(int argc, char** argv) {
     cin>>places;
     
     //Process values -> Map inputs to Outputs
-    disFell=GRAVITY*time*time/2;
+    dftFell=GRAVITY*time*time/2;
+    dmtFell=dftFell/CNVMFT;
     //float shift=pow(10,places);//Number of places to shift answer
     float shift=exp(places*log(10));//Number of places to shift answer
-    int round1=disFell*shift+0.5;//Round to nearest 10^places
-    disFell=round1/shift;
+    int round1=dftFell*shift+0.5;//Round to nearest 10^places
+    dftFell=round1/shift;//Then shift result back
+    round1=dmtFell*shift+0.5;//Do same for meters
+    dmtFell=round1/shift;
     
     //Display Output
     cout<<"Gravity = "<<GRAVITY<<" ft/sec^2"<<endl;
     cout<<"Time fallen = "<<time<<" seconds"<<endl;
-    cout<<"Distance traveled = "<<disFell<<" ft"<<endl;
+    cout<<"Distance traveled = "<<dftFell<<" ft"<<endl;
+    cout<<"Distance traveled = "<<dmtFell<<" m"<<endl;
 
     //Exit Program
     return 0;
