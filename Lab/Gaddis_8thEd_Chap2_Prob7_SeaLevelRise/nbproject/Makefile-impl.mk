@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=CPPTemplate
+PROJECTNAME=Gaddis_8thEd_Chap2_Prob7_SeaLevelRise
 
 # Active Configuration
 DEFAULTCONF=Debug
