@@ -13,8 +13,8 @@ using namespace std;  //Name-space used in the System Library
 //User Libraries
 
 //Global Constants
-const float CNVMMFT=304.8f;//Conversion milimeters to feet from Google
-const float CNVMMM=1000.0f;//Conversion from milimeters to meters
+const float CNVMMFT=304.8f;//Conversion millimeters to feet from Google
+const float CNVMMM=1000.0f;//Conversion from millimeters to meters
 
 //Function prototypes
 
