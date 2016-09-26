@@ -35,10 +35,10 @@ int main(int argc, char** argv) {
     cout<<(x&&y?'T':'F')<<" ";
     cout<<endl;
     
-    //Input values for first row of the truth table
+    //Input values for second row of the truth table
     y=false;
     
-    //Display the first row of the truth table
+    //Display the second row of the truth table
     cout<<(x?'T':'F')<<" ";
     cout<<(y?'T':'F')<<"  ";
     cout<<(!x?'T':'F')<<"  ";
