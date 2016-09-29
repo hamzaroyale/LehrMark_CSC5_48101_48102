@@ -1,8 +1,8 @@
 /* 
    File:   main
    Author: Dr. Mark E. Lehr
-   Created on September 26th, 2016, 9:45 AM
-   Purpose:  Input a score, output a grade using if
+   Created on September 26th, 2016, 8:30 AM
+   Purpose:  Input a score, output a grade using switch 2
  */
 
 //System Libraries
@@ -26,11 +26,19 @@ int main(int argc, char** argv) {
     cin>>score;
     
     //Process values -> Map inputs to Outputs
-    if(score>=90)grade='A';
-    if(score<90&&score>=80)grade='B';
-    if(score<80&&score>=70)grade='C';
-    if(score<70&&score>=60)grade='D';
-    if(score<60) grade='F';
+    switch(score>=90){
+        case true:grade='A';break;
+        default:switch(score>=80){
+                    case true:grade='B';break;
+                    default:switch(score>=70){
+                                case true:grade='C';break;
+                                default:switch(score>=60){
+                                            case true:grade='D';break;
+                                            default: grade='F';
+                                        }
+                            }
+                }
+    }
     
     //Display Output
     cout<<"Your Grade = "<<grade<<" with a score = "<<score<<endl;
