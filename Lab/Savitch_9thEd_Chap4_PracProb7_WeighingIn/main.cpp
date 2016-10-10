@@ -1,4 +1,4 @@
-/* 
+ /* 
    File:   main
    Author: Dr. Mark E. Lehr
    Created on October 6th, 2016, 12:00 PM
@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     //Declaration of Variables
     float msEarth=5.972e24;//Google lookup -> Kilograms
     float msMark=6.0f;     //Mass of Mark -> Slug
-    float rdEarth=6371.0f; //Google radius of the earth
+    float rdEarth=6371.0f; //Google radius of the earth km
     float weight;          //Force of attraction from Physics
     
     //Conversion of inputs
