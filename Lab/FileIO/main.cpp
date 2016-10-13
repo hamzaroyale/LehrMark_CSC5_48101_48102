@@ -30,7 +30,8 @@ int main(int argc, char** argv) {
     in>>rows>>cols;
     cout<<"rows = "<<rows<<" cols = "<<cols<<endl;
     
-    //Display Output
+    //Display Output / what is in the file to the output screen
+    //In addition add in row numbers and column numbers for the user
     getline(in,line);
     for(int row=1;row<=rows;row++){
         getline(in,line);
