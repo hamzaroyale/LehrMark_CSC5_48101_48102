@@ -45,17 +45,21 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+//Sequence using the factorial
 float usequns(float x,int n){
     //Initialize variables
     float term,seq=1.0f;
     //Process values -> Map inputs to Outputs
-    for(int nterms=2;nterms<=n;nterms++){
-        term=pow(x,2*(nterms-1))*pow(-1.0f,nterms-1)/fact(2*(nterms-1));
+    for(int nterms=1;nterms<n;nterms++){
+        //1 - x^2/2!+ x^4/4! - x^6/6! ........
+        term=pow(x,2*nterms)*pow(-1.0f,nterms)/fact(2*nterms);
         seq+=term;
     }
     return seq;
 }
 
+
+//Calculates the factorial
 unsigned int fact(unsigned int n){
     unsigned int nfact=1;
     for(unsigned int i=1;i<=n;i++){
@@ -64,6 +68,7 @@ unsigned int fact(unsigned int n){
     return nfact;
 }
 
+//Stops when accuracy reached 10^-6
 float sequens(float x){
     //Initialize variables
     float term=1.0f,seq=1.0f;
@@ -75,6 +80,7 @@ float sequens(float x){
     return seq;
 }
 
+//Stops when number of terms reached
 float sequens(float x,int n){
     //Initialize variables
     float term=1.0f,seq=1.0f;

@@ -54,9 +54,10 @@ int main(int argc, char** argv) {
         cout<<"Future  Value  (Reference)    =$"<<futVal<<endl;
     cout<<"Future  Value  (Defaulted n=8)=$"<<save7(pv,intRate)<<endl;
     cout<<"Future  Value  (Defaulted)    =$"<<save7(pv,intRate,nComp)<<endl;
-    cout<<"Future  Value  (Overloading)  =$"<<save3(pv,intRate,1.0f*nComp)<<endl;
-    save8(pv,intRate,nComp,futVal);
-    cout<<"Future  Value  (Static)       =$"<<futVal<<endl;
+    cout<<"Future  Value  (Overloading)  =$"
+            <<save3(pv,intRate,static_cast<float>(nComp))<<endl;
+    for(int i=1;i<=nComp-1;i++)
+            save8(pv,intRate,nComp,futVal);
     int count=save8(pv,intRate,nComp,futVal);
     cout<<"Future  Value  (Static)       =$"<<futVal<<endl;
     cout<<"We called the Static function "<<count<<" times"<<endl;
@@ -74,6 +75,9 @@ int main(int argc, char** argv) {
 //  n->Number of compounding periods, typically by year
 //Output:   Outputs to the function here -> Description, Range, Units
 //  Savings after n compounding periods with i interest rate and p principle
+//  count-> static variable to count how many times the function called
+//Input-Output:
+//  Future Value pass by reference
 //******************************************************************************
 
 int save8(float p,float i,int n,float &fv){
@@ -136,6 +140,9 @@ float save7(float p,float i,int n){
 //  n->Number of compounding periods, typically by year
 //Output:   Outputs to the function here -> Description, Range, Units
 //  Savings after n compounding periods with i interest rate and p principle
+//  boolean true if same as fv=pv, else !=
+//Input-Output:
+//  fv->future value
 //******************************************************************************
 
 bool isSave6(float p,float i,int n,float &fv){

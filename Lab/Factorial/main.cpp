@@ -13,30 +13,41 @@ using namespace std;  //Name-space used in the System Library
 //User Libraries
 
 //Global Constants
-const float PI=4*atan(1);
 
 //Function prototypes
+unsigned int fact(unsigned int);
+bool isGood(int);
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declaration of Variables
-    float x,seq=1,term=1;
-    int n;
+    unsigned int n=40;
     
     //Input values
-    n=50;
-    x=PI/3;
     
     //Process values -> Map inputs to Outputs
-    for(int cnt=1,nterms=2;nterms<=n;cnt+=2,nterms++){
-        term*=-1.0f*x*x/cnt/(cnt+1);
-        seq+=term;
+    for(int i=1;i<=n;i++){
+        cout<<(isGood(i)?"Good Value -> ":"Bad Value -> ");
+        cout<<i<<"! = "<<fact(i)<<endl;
     }
     
     //Display Output
-    cout<<"Sequence = "<<seq<<endl;
-    cout<<"Cos("<<x<<")="<<cos(x)<<endl;
+ 
     
     //Exit Program
     return 0;
+}
+
+bool isGood(int n){
+    int ntest=fact(n)/fact(n-1);
+    return ntest==n?true:false;
+}
+
+//Calculates the factorial
+unsigned int fact(unsigned int n){
+    unsigned int nfact=1;
+    for(unsigned int i=1;i<=n;i++){
+        nfact*=i;
+    }
+    return nfact;
 }
