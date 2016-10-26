@@ -15,13 +15,13 @@ using namespace std;  //Name-space used in the System Library
 //Global Constants
 
 //Function prototypes
-unsigned int fact(unsigned int);
+int fact(int);
 bool isGood(int);
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declaration of Variables
-    unsigned int n=40;
+    int n=40;
     
     //Input values
     
@@ -44,9 +44,9 @@ bool isGood(int n){
 }
 
 //Calculates the factorial
-unsigned int fact(unsigned int n){
-    unsigned int nfact=1;
-    for(unsigned int i=1;i<=n;i++){
+int fact(int n){
+    int nfact=1;
+    for(int i=1;i<=n;i++){
         nfact*=i;
     }
     return nfact;
