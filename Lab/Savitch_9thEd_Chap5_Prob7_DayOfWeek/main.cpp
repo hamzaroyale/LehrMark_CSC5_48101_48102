@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     //Input values
     
     //Process values -> Map inputs to Outputs
-    cout<<"Day of week = "<<dayOfWk(7,4,2008)<<endl;
+    cout<<"Day of week = "<<dayOfWk(11,12,2016)<<endl;
     //Display Output
 
     //Exit Program
@@ -71,7 +71,7 @@ int getYVal(int year){
 }
 
 int getCVal(int year){
-    return 2*(3-year%4);
+    return 2*(3-(year/100)%4);
 }
 
 bool isLpYr(int year){
