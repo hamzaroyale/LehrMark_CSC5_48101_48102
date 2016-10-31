@@ -7,6 +7,7 @@
 
 //System Libraries
 #include <iostream>   //Input/Output objects
+#include <cstdlib>    //exit return
 using namespace std;  //Name-space used in the System Library
 
 //User Libraries
@@ -27,7 +28,7 @@ int main(int argc, char** argv) {
     //Input values
     
     //Process values -> Map inputs to Outputs
-    cout<<"Day of week = "<<dayOfWk(11,12,2016)<<endl;
+    cout<<"Day of week = "<<dayOfWk(10,31,2016)<<endl;
     //Display Output
 
     //Exit Program
@@ -52,16 +53,14 @@ int  getMVal(int m,int y){
     switch(m){
         case 1:return isLpYr(y)?6:0;
         case 2:return isLpYr(y)?2:3;
-        case 3:return 3;
-        case 4:return 6;
+        case 3:case 11:return 3;
+        case 4:case  7:return 6;
+        case 9:case 12:return 5;
         case 5:return 1;
         case 6:return 4;
-        case 7:return 6;
         case 8:return 2;
-        case 9:return 5;
         case 10:return 0;
-        case 11:return 3;
-        default:return 5;
+        default:cout<<"Bad number"<<endl;exit(1);
     }
 }
 
