@@ -8,6 +8,7 @@
 //System Libraries Here
 #include <iostream>  //I/O
 #include <cmath>     //Sin
+#include <ctime>     //Time
 using namespace std;
 
 //User Libraries Here
@@ -19,7 +20,8 @@ const float CNVRDEG=180/PI;
 
 //Function Prototypes Here
 void fillAry(float [],int);
-float interp(float [],float);
+float interp(float [],double);
+float interp2(float [],double);
 
 //Program Execution Begins Here
 int main(int argc, char** argv) {
@@ -30,13 +32,53 @@ int main(int argc, char** argv) {
     //Fill the array
     fillAry(sArray,SIZE);
     
-    //Output Located Here
-    for(int deg=0;deg<SIZE;deg++){
-        float fdeg=deg+0.5;
-        cout<<"Math sin("<<fdeg<<")="<<sin(fdeg/CNVRDEG)
-            <<" Our interpolated sin ("<<fdeg<<")="<<interp(sArray,fdeg)<<endl;
+    //Sin function call time
+    double PI2=PI/2;
+    double increment=PI2/2000000000;
+    int strt=time(0);
+    for(double rad=0;rad<PI2;rad+=increment){
     }
+    int endt=time(0);
+    cout<<"Total time for sin loop only = "<<endt-strt<<" sec"<<endl;
     
+    //Sin function call time
+    strt=time(0);
+    for(double rad=0;rad<PI2;rad+=increment){
+        double x=sin(rad);
+    }
+    endt=time(0);
+    cout<<"Total time to call sin function with loops = "<<endt-strt<<" sec"<<endl;
+    
+    //Interpolated function call time
+    strt=time(0);
+    increment=90.0/2000000000;//Millionth of a degree
+    strt=time(0);
+    for(double deg=0;deg<90;deg+=increment){
+    }
+    endt=time(0);
+    cout<<"Total time to call interpolated sin function loop only = "<<endt-strt<<" sec"<<endl;
+    
+    //Interpolated function call time
+    strt=time(0);
+    increment=90.0/2000000000;//Millionth of a degree
+    strt=time(0);
+    for(double deg=0;deg<90;deg+=increment){
+        float x=interp(sArray,deg);
+    }
+    endt=time(0);
+    cout<<"Total time to call interpolated sin function with loops = "<<endt-strt<<" sec"<<endl;
+    
+    //Interpolated function call time
+    strt=time(0);
+    increment=90.0/2000000000;//Millionth of a degree
+    strt=time(0);
+    for(double deg=0;deg<90;deg+=increment){
+        int ideg=deg;
+        float x=sArray[ideg];
+    }
+    endt=time(0);
+    cout<<"Total time to call sin array with loops = "<<endt-strt<<" sec"<<endl;
+
     //Exit
     return 0;
 }
@@ -48,10 +90,15 @@ void fillAry(float a[],int n){
     }
 }
 
-float interp(float sArray[],float x){
+float interp(float sArray[],double x){
     int x1=x;
     int x2=x1+1;
+    return sArray[x1]+(x-x1)*(sArray[x2]-sArray[x1]);
+}
+float interp2(float sArray[],double x){
+    int x1=x;
+    int x2=x1++;
     float y1=sArray[x1];
-    float y2=sArray[x2];
-    return y1+(x-x1)*(y2-y1)/(x2-x1);
+    float y2my1=sArray[x2]-y1;
+    return y1+(x-x1)*y2my1;
 }

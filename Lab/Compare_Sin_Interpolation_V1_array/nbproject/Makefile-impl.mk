@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Compare_Sin_Interpolation_V1
+PROJECTNAME=Compare_Sin_Interpolation_V1_array
 
 # Active Configuration
 DEFAULTCONF=Debug
