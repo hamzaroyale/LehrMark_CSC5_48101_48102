@@ -1,7 +1,7 @@
 /* 
    File:   main
    Author: Dr. Mark E. Lehr
-   Created on September 29th, 2016, 12:00 PM
+   Created on Nov 14th, 2016, 12:00 PM
    Purpose:  Game of Life 3 Dimensional Array
  */
 
