@@ -52,9 +52,9 @@ int main(int argc, char** argv) {
 }
 
 void rainy(int stat[][NMONTHS]){
-    int sum=0,low=stat[0][0],high=stat[0][0];
+    int sum=stat[0][0],low=stat[0][0],high=stat[0][0];
     float avg;
-    for(int months=0;months<NMONTHS;months++){
+    for(int months=1;months<NMONTHS;months++){
         sum+=stat[months][0];
         if(high<stat[months][0])high=stat[months][0];
         if(low>stat[months][0])low=stat[months][0];
