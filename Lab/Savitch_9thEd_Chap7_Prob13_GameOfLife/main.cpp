@@ -33,7 +33,8 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declaration of Variables
-    const int NGEN=200;//Maximum array size, number of generations
+    //NGEN<1150 reaches maximum static array size
+    const int NGEN=2;//Maximum array size, number of generations
     char life[NGEN][ROWS][COLS];
     int count[ROWS][COLS];
     int wait=1;//Number of seconds to wait
@@ -46,7 +47,7 @@ int main(int argc, char** argv) {
     pause(wait);
     
     //A glider in at a couple of positions
-    random(life,0);
+    //random(life,0);
     glider(life,0,10,38);
     glider(life,0,0,0);
     glider(life,0,15,65);
@@ -58,6 +59,7 @@ int main(int argc, char** argv) {
     //Loop a number of generations
     for(int gen=0;gen<NGEN-1;gen++){
         neybor(life,gen,count);
+        //prntAry(count,ROWS);
         nextGen(life,gen,count);
 
         //Print the generation
