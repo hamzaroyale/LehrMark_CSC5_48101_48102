@@ -80,11 +80,10 @@ void swap(int &a,int &b){
 
 void prntAry(int a[],int n){
     //Output Located Here
-    int count=0;
     cout<<"The Array"<<endl;
     for(int i=0;i<n;i++){
         cout<<a[i]<<" ";
-        if((count++)%10==9)cout<<endl;
+        if(i%10==9)cout<<endl;
     }
     cout<<endl;
 }
