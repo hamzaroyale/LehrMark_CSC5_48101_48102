@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Binary_Search_V1
+PROJECTNAME=Search_Binary_V1
 
 # Active Configuration
 DEFAULTCONF=Debug
