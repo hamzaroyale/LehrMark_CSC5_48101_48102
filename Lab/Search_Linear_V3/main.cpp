@@ -60,12 +60,14 @@ vector<int> allSrch(int array[],int utilize,int value){
     //Declare index where the value to find will be located
     vector<int> find;
     int whrFnd=-1;
+    bool found;
     //Exhaust the search
     do{
         //Test out linear search
         whrFnd=linSrch(array,utilize,whrFnd+1,value);
-        if(whrFnd!=-1)find.push_back(whrFnd);
-    }while(whrFnd!=-1);
+        found=(whrFnd!=-1);//
+        if(found)find.push_back(whrFnd);
+    }while(found);
     //Return all the values
     return find;
 }
@@ -79,7 +81,7 @@ int linSrch(int a[],int n,int pos,int val){
 
 void prntAry(vector<int> &a){
     //Output Located Here
-    cout<<"The Array"<<endl;
+    cout<<"The Vector contents where the value was found "<<endl;
     for(int i=0;i<a.size();i++){
         cout<<a[i]<<" ";
         if(i%10==9)cout<<endl;
