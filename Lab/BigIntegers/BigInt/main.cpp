@@ -7,25 +7,27 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
-int length(char []);
+int  length(char []);
 bool digitAdd(char,char,char &,bool=false);
-int sizeResult(char [],char []);
+int  sizeResult(char [],char []);
 bool numberAdd(char [],char [],char []);
 
 int main(int argc, char** argv) {
     //Create the test numbers using character arrays
-    char number1[]="12345698765432109876543210";
-    char number2[]="11111234567890123456789123";
-    char result[sizeResult(number1,number2)];
+    char number1[]="1234569876543210987654321012345678901234567890";
+    char number2[]="234567890123456789123456789012345678";
+    int width=sizeResult(number1,number2);
+    char result[width];
     //Add the numbers
-    cout<<number1<<endl;
-    cout<<number2<<endl;
+    cout<<setw(width)<<number1<<endl;
+    cout<<setw(width)<<number2<<endl;
     bool x=numberAdd(number1,number2,result);
     if(x)cout<<"overflow"<<endl;
-    else cout<<result<<endl;
-
+    else cout<<setw(width)<<result<<endl;
+    //Exit
     return 0;
 }
 
